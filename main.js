@@ -33,26 +33,32 @@ function init() {
 
   //This really isn't the world just the foundation or cement of the parking lot.
   //Maybe later I wont be lazy and changed the name.
-  var world = new World();
+  var world = new World(renderer,scene);
   scene.add(world);
 
-  var isFloor = new ISFloor();
+  var isFloor = new ISFloor(renderer,scene);
   scene.add(isFloor);
   isFloor.position.y = 1;
 
-  var walls = new MainWalls();
+  var walls = new MainWalls(renderer,scene);
   scene.add(walls);
   walls.rotation.y = Math.PI/2
-
-  camera.position.z = 50;
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
-    //controls.userPan = false;
-    //controls.userPanSpeed = 0.0;
+  walls.position.y = 150
+  camera.position.z = 500;
+  controls = new THREE.OrbitControls( camera, renderer.domElement );
+    controls.userPan = false;
+    controls.userPanSpeed = 0.0;
     controls.maxDistance = 12500;
-    controls.maxPolarAngle = Math.PI /3;
+    //controls.maxPolarAngle = Math.PI /3;
+    /*controls.movementSpeed = 70;
+    controls.lookSpeed = 0.05;
+    controls.noFly = true;
+    controls.lookVertical = false;*/
   var render = function () {
+    //controls.update();
     requestAnimationFrame( render );
   	renderer.render(scene, camera);
+
   };
 
   render();

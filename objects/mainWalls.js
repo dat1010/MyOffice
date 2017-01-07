@@ -1,4 +1,4 @@
-MainWalls = function() {
+MainWalls = function(renderer,scene) {
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/walltexture.png', {}, function() {
     renderer.render(scene);

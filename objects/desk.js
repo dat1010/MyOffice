@@ -1,4 +1,4 @@
-Desk = function(){
+DogBoneDesk = function(){
   var group = new THREE.Group();
   
 }

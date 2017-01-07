@@ -1,4 +1,4 @@
-ISFloor = function(){
+ISFloor = function(renderer,scene){
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/Classic-carpet-texture.png', {}, function() {
     renderer.render(scene);
