@@ -22,7 +22,7 @@ function init() {
       light2.position.set(-1, -1, -1);
       scene.add(light2);*/
   var sky = new THREE.Mesh(
-            new THREE.SphereGeometry(1000, 32, 320),
+            new THREE.SphereGeometry(10000, 32, 320),
             new THREE.MeshPhongMaterial({
                 map: THREE.ImageUtils.loadTexture('textures/skyboxsun25degtest.jpg')
             })
@@ -31,8 +31,16 @@ function init() {
   sky.rotation.x = -Math.PI * 0.5;
   scene.add(sky);
 
+  //This really isn't the world just the foundation or cement of the parking lot.
+  //Maybe later I wont be lazy and changed the name.
   var world = new World();
   scene.add(world);
+
+  var isFloor = new ISFloor();
+  scene.add(isFloor);
+  isFloor.position.y = 1;
+
+
   camera.position.z = 50;
   controls = new THREE.OrbitControls(camera, renderer.domElement);
     //controls.userPan = false;
