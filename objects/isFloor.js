@@ -9,7 +9,7 @@ ISFloor = function(){
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
   var geometrySquare = new THREE.BoxGeometry(1000,10,1000);
   var square = new THREE.Mesh(geometrySquare, gateMaterial);
-  //square.rotation. = Math.PI/2
+
   group.add(square);
   return group;
 }

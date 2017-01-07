@@ -40,6 +40,9 @@ function init() {
   scene.add(isFloor);
   isFloor.position.y = 1;
 
+  var walls = new MainWalls();
+  scene.add(walls);
+  walls.rotation.y = Math.PI/2
 
   camera.position.z = 50;
   controls = new THREE.OrbitControls(camera, renderer.domElement);
