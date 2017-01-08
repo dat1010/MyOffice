@@ -7,7 +7,7 @@ MainWalls = function(renderer,scene) {
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 5, 5 );
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
-  var geometrySquare = new THREE.BoxGeometry(1000,280,5);
+  var geometrySquare = new THREE.BoxGeometry(1500,280,5);
   var northWall = new THREE.Mesh(geometrySquare, gateMaterial);
   northWall.rotation.y = Math.PI/2;
   northWall.position.x = 500;
@@ -17,11 +17,13 @@ MainWalls = function(renderer,scene) {
   southWall.rotation.y = Math.PI/2;
   southWall.position.x = -500;
 
-  var westWall = new THREE.Mesh(geometrySquare, gateMaterial);
-  westWall.position.z = 500;
 
-  var eastWall = new THREE.Mesh(geometrySquare, gateMaterial);
-  eastWall.position.z = -500;
+  var westEastGeometry = new THREE.BoxGeometry(1000,280,5);
+  var westWall = new THREE.Mesh(westEastGeometry, gateMaterial);
+  westWall.position.z = 750;
+
+  var eastWall = new THREE.Mesh(westEastGeometry, gateMaterial);
+  eastWall.position.z = -750;
 
   group.add(northWall);
   group.add(southWall);

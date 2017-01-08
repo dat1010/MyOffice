@@ -43,8 +43,13 @@ function init() {
   var walls = new MainWalls(renderer,scene);
   scene.add(walls);
   walls.rotation.y = Math.PI/2
-  walls.position.y = 150
+  walls.position.y = 145;
   camera.position.z = 500;
+
+  var devDesk = new DogBoneDesk(renderer,scene)
+  scene.add(devDesk);
+  devDesk.position.y = 45;
+
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
     controls.userPanSpeed = 0.0;
