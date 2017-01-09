@@ -5,7 +5,7 @@ ISFloor = function(renderer,scene){
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set( 50, 50 );
+  texture.repeat.set( 15, 15 );
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
   var geometrySquare = new THREE.BoxGeometry(1500,10,1000);
   var square = new THREE.Mesh(geometrySquare, gateMaterial);

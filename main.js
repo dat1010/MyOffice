@@ -46,9 +46,20 @@ function init() {
   walls.position.y = 145;
   camera.position.z = 500;
 
-  var devDesk = new DogBoneDesk(renderer,scene)
+  var devDesk = new DogBoneDesk(renderer,scene);
   scene.add(devDesk);
   devDesk.position.y = 45;
+  devDesk.position.z = -50;
+  devDesk.position.x = -450;
+  devDesk.rotation.y = 11*Math.PI/6;
+
+  var qaDesk = new DogBoneDesk(renderer,scene);
+  scene.add(qaDesk);
+  qaDesk.position.y = 45;
+  qaDesk.position.x = 100;
+  qaDesk.position.z = -15;
+  qaDesk.rotation.y = Math.PI/2;
+
 
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
