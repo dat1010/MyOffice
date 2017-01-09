@@ -22,7 +22,7 @@ function init() {
       light2.position.set(-1, -1, -1);
       scene.add(light2);*/
   var sky = new THREE.Mesh(
-            new THREE.SphereGeometry(1000, 32, 320),
+            new THREE.SphereGeometry(10000, 32, 320),
             new THREE.MeshPhongMaterial({
                 map: THREE.ImageUtils.loadTexture('textures/skyboxsun25degtest.jpg')
             })
@@ -31,17 +31,50 @@ function init() {
   sky.rotation.x = -Math.PI * 0.5;
   scene.add(sky);
 
-  var world = new World();
+  //This really isn't the world just the foundation or cement of the parking lot.
+  //Maybe later I wont be lazy and changed the name.
+  var world = new World(renderer,scene);
   scene.add(world);
-  camera.position.z = 50;
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
-    //controls.userPan = false;
-    //controls.userPanSpeed = 0.0;
+
+  var isFloor = new ISFloor(renderer,scene);
+  scene.add(isFloor);
+  isFloor.position.y = 1;
+
+  var walls = new MainWalls(renderer,scene);
+  scene.add(walls);
+  walls.rotation.y = Math.PI/2
+  walls.position.y = 145;
+  camera.position.z = 500;
+
+  var devDesk = new DogBoneDesk(renderer,scene);
+  scene.add(devDesk);
+  devDesk.position.y = 45;
+  devDesk.position.z = -50;
+  devDesk.position.x = -450;
+  devDesk.rotation.y = 11*Math.PI/6;
+
+  var qaDesk = new DogBoneDesk(renderer,scene);
+  scene.add(qaDesk);
+  qaDesk.position.y = 45;
+  qaDesk.position.x = 100;
+  qaDesk.position.z = -15;
+  qaDesk.rotation.y = Math.PI/2;
+
+
+  controls = new THREE.OrbitControls( camera, renderer.domElement );
+    controls.userPan = false;
+    controls.userPanSpeed = 0.0;
     controls.maxDistance = 12500;
-    controls.maxPolarAngle = Math.PI /3;
+    //controls.maxPolarAngle = Math.PI /3;
+    /*controls.movementSpeed = 70;
+    controls.lookSpeed = 0.05;
+    controls.noFly = true;
+    controls.lookVertical = false;*/
   var render = function () {
+    //controls.update();
     requestAnimationFrame( render );
   	renderer.render(scene, camera);
+
   };
 
   render();
