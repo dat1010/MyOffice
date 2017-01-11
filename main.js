@@ -15,7 +15,7 @@ function init() {
 
  var  light = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
       light.color.setHSL(1, 1, 1);
-      light.position.set(0, 100, 0);
+      light.position.set(0, 0, 0);
       scene.add(light);
 
       /*var light2 = new THREE.SpotLight(0xff99944);
@@ -24,42 +24,48 @@ function init() {
   var sky = new THREE.Mesh(
             new THREE.SphereGeometry(10000, 32, 320),
             new THREE.MeshPhongMaterial({
-                map: THREE.ImageUtils.loadTexture('textures/skyboxsun25degtest.jpg')
+                map: THREE.ImageUtils.loadTexture('image/sky_offworld2.png')
             })
         );
   sky.material.side = THREE.BackSide;
-  sky.rotation.x = -Math.PI * 0.5;
+  //sky.rotation.x = -Math.PI;
+  //sky.rotation.x = Math.PI/2;
   scene.add(sky);
 
   //This really isn't the world just the foundation or cement of the parking lot.
   //Maybe later I wont be lazy and changed the name.
   var world = new World(renderer,scene);
   scene.add(world);
-
+  world.position.y = -45;
   var isFloor = new ISFloor(renderer,scene);
   scene.add(isFloor);
-  isFloor.position.y = 1;
+  isFloor.position.y = - 44;
 
   var walls = new MainWalls(renderer,scene);
   scene.add(walls);
   walls.rotation.y = Math.PI/2
-  walls.position.y = 145;
+  walls.position.y = 100;
   camera.position.z = 500;
 
   var devDesk = new DogBoneDesk(renderer,scene);
   scene.add(devDesk);
-  devDesk.position.y = 45;
+  //devDesk.position.y = 45;
   devDesk.position.z = -50;
   devDesk.position.x = -450;
   devDesk.rotation.y = 11*Math.PI/6;
 
   var qaDesk = new DogBoneDesk(renderer,scene);
   scene.add(qaDesk);
-  qaDesk.position.y = 45;
+  //qaDesk.position.y = 45;
   qaDesk.position.x = 100;
   qaDesk.position.z = -15;
   qaDesk.rotation.y = Math.PI/2;
 
+  var zarbeckCabinet = new FilingCabinet(renderer,scene);
+  scene.add(zarbeckCabinet);
+  zarbeckCabinet.position.x = -600;
+  zarbeckCabinet.position.z = -215;
+  zarbeckCabinet.rotation.y = -Math.PI/3;
 
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
