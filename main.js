@@ -67,6 +67,21 @@ function init() {
   zarbeckCabinet.position.z = -215;
   zarbeckCabinet.rotation.y = -Math.PI/3;
 
+  var myMainMonitor = new Monitor(renderer,scene,'image/MyComputer.png',45,30);
+  scene.add(myMainMonitor);
+  myMainMonitor.position.x = -358;
+  myMainMonitor.position.z = 17;
+  myMainMonitor.position.y = 65;
+  myMainMonitor.rotation.y = -Math.PI/4;
+
+  var mySecondMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  scene.add(mySecondMonitor);
+  mySecondMonitor.position.x = -394;
+  mySecondMonitor.position.z = -11;
+  mySecondMonitor.position.y = 65;
+  mySecondMonitor.rotation.y = -Math.PI/6;
+
+
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
     controls.userPanSpeed = 0.0;
