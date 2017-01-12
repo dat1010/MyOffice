@@ -81,6 +81,41 @@ function init() {
   mySecondMonitor.position.y = 65;
   mySecondMonitor.rotation.y = -Math.PI/6;
 
+  var anthoniesMonitor = new Monitor(renderer,scene,'image/overwatch.png',45,30);
+  //scene.add(anthoniesMonitor);
+  var anthonyConitorGroup = new THREE.Group();
+  anthoniesMonitor.position.x = -22.5;
+  anthoniesMonitor.position.z = 5;
+  anthoniesMonitor.rotation.y = Math.PI/4;
+  anthonyConitorGroup.add(anthoniesMonitor);
+  var anthonies2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  anthonies2ndMonitor.position.x = 18;
+  anthonies2ndMonitor.position.z = -5;
+  anthonyConitorGroup.add(anthonies2ndMonitor)
+  scene.add(anthonyConitorGroup);
+  anthonyConitorGroup.position.x = -555;
+  anthonyConitorGroup.position.z = -95;
+  anthonyConitorGroup.position.y = 65;
+  anthonyConitorGroup.rotation.y = -Math.PI/6;
+
+
+  /*var jHallMonitor = new Monitor(renderer,scene,'image/overwatch.png',30,50);
+  //scene.add(anthoniesMonitor);
+  var jHallMonitorGroup = new THREE.Group();
+  anthoniesMonitor.position.x = -22.5;
+  anthoniesMonitor.position.z = 5;
+  anthoniesMonitor.rotation.y = Math.PI/4;
+  anthonyConitorGroup.add(anthoniesMonitor);
+  var anthonies2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  anthonies2ndMonitor.position.x = 18;
+  anthonies2ndMonitor.position.z = -5;
+  anthonyConitorGroup.add(anthonies2ndMonitor)
+  scene.add(anthonyConitorGroup);
+  anthonyConitorGroup.position.x = -555;
+  anthonyConitorGroup.position.z = -95;
+  anthonyConitorGroup.position.y = 65;
+  anthonyConitorGroup.rotation.y = -Math.PI/6;*/
+
 
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
