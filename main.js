@@ -99,22 +99,43 @@ function init() {
   anthonyConitorGroup.rotation.y = -Math.PI/6;
 
 
-  /*var jHallMonitor = new Monitor(renderer,scene,'image/overwatch.png',30,50);
+  var jHallMonitor = new Monitor(renderer,scene,'image/theLongMonitor.png',30,50);
   //scene.add(anthoniesMonitor);
   var jHallMonitorGroup = new THREE.Group();
-  anthoniesMonitor.position.x = -22.5;
-  anthoniesMonitor.position.z = 5;
-  anthoniesMonitor.rotation.y = Math.PI/4;
-  anthonyConitorGroup.add(anthoniesMonitor);
-  var anthonies2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
-  anthonies2ndMonitor.position.x = 18;
-  anthonies2ndMonitor.position.z = -5;
-  anthonyConitorGroup.add(anthonies2ndMonitor)
-  scene.add(anthonyConitorGroup);
-  anthonyConitorGroup.position.x = -555;
-  anthonyConitorGroup.position.z = -95;
-  anthonyConitorGroup.position.y = 65;
-  anthonyConitorGroup.rotation.y = -Math.PI/6;*/
+  jHallMonitor.position.x = -40;
+  //jHallMonitor.position.z = 5;
+  //jHallMonitor.rotation.y = Math.PI/4;
+  jHallMonitor.rotation.x = -Math.PI/10;
+  jHallMonitorGroup.add(jHallMonitor);
+  var jHall2ndMonitor = new Monitor(renderer,scene,'image/lolDefeat.png',45,30);
+  //jHall2ndMonitor.position.x = 18;
+  //jHall2ndMonitor.position.z = -5;
+  jHallMonitorGroup.add(jHall2ndMonitor)
+  scene.add(jHallMonitorGroup);
+  jHall2ndMonitor.rotation.y = -Math.PI/6;
+  jHall2ndMonitor.position.z = 15;
+  var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  jHallMonitorGroup.position.x = -570;
+  jHallMonitorGroup.position.z = -149;
+  jHallMonitorGroup.position.y = 65;
+  jHallMonitorGroup.rotation.y = (3*Math.PI)/4;
+
+
+  var brandonMonitor = new Monitor(renderer,scene,'image/makinBacon.png',45,30);
+  var brandonMonitorGroup = new THREE.Group();
+  brandonMonitorGroup.add(brandonMonitor);
+
+  var brandon2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  brandon2ndMonitor.position.x = -45
+  brandon2ndMonitor.rotation.y = Math.PI/7;
+  brandon2ndMonitor.position.z = 10;
+  brandonMonitorGroup.add(brandon2ndMonitor);
+  brandonMonitorGroup.rotation.y =  (3*Math.PI)/3.5;
+  brandonMonitorGroup.position.x = -365;
+  brandonMonitorGroup.position.y = 65;
+  brandonMonitorGroup.position.z = -12;
+
+  scene.add(brandonMonitorGroup);
 
 
   controls = new THREE.OrbitControls( camera, renderer.domElement );
