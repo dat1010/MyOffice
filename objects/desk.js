@@ -90,13 +90,13 @@ DogBoneDesk = function(renderer,scene){
   var geometryCylinder = new THREE.CylinderGeometry(32,32,2,32);
   var endCircle1 = new THREE.Mesh(geometryCylinder, gateMaterial);
   endCircle1.position.y = 42;
-  endCircle1.position.x = 165;
-  endCircle1.position.z = 40;
+  endCircle1.position.x = 175;
+  endCircle1.position.z = 50;
 
   var endCircle2 = new THREE.Mesh(geometryCylinder, gateMaterial);
   endCircle2.position.y = 42;
-  endCircle2.position.x = 165;
-  endCircle2.position.z = -40;
+  endCircle2.position.x = 175;
+  endCircle2.position.z = -50;
 
   var rightCircleGroup = new THREE.Group();
   rightCircleGroup.add(endCircle1);
@@ -106,7 +106,7 @@ DogBoneDesk = function(renderer,scene){
   leftCircleGroup.rotation.y = Math.PI;
 
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
-  var geometrySquare = new THREE.BoxGeometry(360,2,90);
+  var geometrySquare = new THREE.BoxGeometry(370,2,90);
   var square = new THREE.Mesh(geometrySquare, gateMaterial);
   square.position.y = 42;
 
