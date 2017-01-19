@@ -69,12 +69,6 @@ function init() {
 
   var monitors = new AddMonitors(renderer, scene);
 
-
-  var myLapTop = new DellLapTop(renderer,scene,'image/MyComputer.png',28,17);
-  scene.add(myLapTop);
-
-
-
   controls = new THREE.OrbitControls( camera, renderer.domElement );
     controls.userPan = false;
     controls.userPanSpeed = 0.0;

@@ -1,4 +1,5 @@
-DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth){
+DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth,closed){
+  closed = closed || false;
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/bumpy-black-plastic-texture.png', {}, function() {
     renderer.render(scene);
@@ -54,6 +55,12 @@ DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth){
   var keyboard = new THREE.Mesh(geometryKeyboard, keyboardMaterials);
   keyboard.position.y = -8.5;
   keyboard.position.z = 10.6;
+
+  if (closed == true){
+    //it works! maybe later ill make it able to be closed
+    //screen.rotation.x = -Math.PI;
+  }
+
 
   group.add(screen);
   group.add(keyboard);
