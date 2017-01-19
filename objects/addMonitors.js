@@ -188,5 +188,5 @@ AddMonitors = function(renderer,scene){
   playerGroup.position.z = 150;
   playerGroup.position.x = 80;
   playerGroup.rotation.y = 11*Math.PI/6;
-  scene.add(playerGroup);
+  //scene.add(playerGroup);
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <script src='three.js-master/build/three.min.js'></script>
-<script src='bower_components/threejs/examples/js/controls/OrbitControls.js'></script>
+<script src='bower_components/threejs/examples/js/controls/PointerLockControls.js'></script>
 <script src='bower_components/threejs/examples/js/Mirror.js'></script>
 <script src='bower_components/threejs/examples/js/WaterShader.js'></script>
 <script src='bower_components/threejs/examples/js/Detector.js'></script>
@@ -113,6 +113,15 @@
     }
 </style>
 <body>
+  <div id="blocker">
+
+			<div id="instructions">
+				<span style="font-size:40px">Click to play</span>
+				<br />
+				(W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+			</div>
+
+		</div>
 <p>
   UTS Developer Simulator
 </p>
