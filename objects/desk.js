@@ -37,23 +37,23 @@ DogBoneDesk = function(renderer,scene){
   });
   dividerTexture.wrapS = THREE.RepeatWrapping;
   dividerTexture.wrapT = THREE.RepeatWrapping;
-  dividerTexture.repeat.set( 2, 2 );
+  dividerTexture.repeat.set( 4, 4 );
   var dividerMaterial = new THREE.MeshBasicMaterial({map: dividerTexture});
-  var geometrySquare = new THREE.BoxGeometry(250,40,1);
+  var geometrySquare = new THREE.BoxGeometry(250,50,1);
   var middleDivider = new THREE.Mesh(geometrySquare, dividerMaterial);
-  middleDivider.position.y = 62;
+  middleDivider.position.y = 67;
 
-  var endDividerGeometry = new THREE.BoxGeometry(70,40,1);
+  var endDividerGeometry = new THREE.BoxGeometry(70,50,1);
   var endDivider1 = new THREE.Mesh(endDividerGeometry,dividerMaterial);
   endDivider1.position.x = 150;
   endDivider1.position.z = -23;
-  endDivider1.position.y = 62;
+  endDivider1.position.y = 67;
   endDivider1.rotation.y = Math.PI/4
 
   var endDivider2 = new THREE.Mesh(endDividerGeometry,dividerMaterial);
   endDivider2.position.x = 150;
   endDivider2.position.z = 23;
-  endDivider2.position.y = 62;
+  endDivider2.position.y = 67;
   endDivider2.rotation.y = -Math.PI/4
 
   var rightDividerGroup = new THREE.Group();
