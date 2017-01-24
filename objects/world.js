@@ -5,9 +5,9 @@ World = function(renderer,scene){
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set( 100,100 );
+  texture.repeat.set( 5,5 );
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
-  var geometrySquare = new THREE.BoxGeometry(10000,10,10000);
+  var geometrySquare = new THREE.BoxGeometry(100,10,100);
   var square = new THREE.Mesh(geometrySquare, gateMaterial);
   //square.rotation. = Math.PI/2
   group.add(square);

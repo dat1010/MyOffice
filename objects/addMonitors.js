@@ -44,6 +44,12 @@ AddMonitors = function(renderer,scene){
   anthoniesLaptop.position.x = 55;
   anthoniesLaptop.position.y = -6;
   anthoniesLaptop.position.z = -3;
+  var anthonyKeyboard = new KeyBoard(renderer,scene);
+  anthonyKeyboard.position.y = -23;
+  anthonyKeyboard.position.z = 13;
+  anthonyKeyboard.position.x = 8;
+  anthonyConitorGroup.add(anthonyKeyboard);
+
   scene.add(anthonyConitorGroup);
   anthonyConitorGroup.position.x = -555;
   anthonyConitorGroup.position.z = -95;
@@ -66,6 +72,13 @@ AddMonitors = function(renderer,scene){
   scene.add(jHallMonitorGroup);
   jHall2ndMonitor.rotation.y = -Math.PI/6;
   jHall2ndMonitor.position.z = 15;
+
+  var jHallKeyboard = new KeyBoard(renderer,scene);
+  jHallKeyboard.position.y = -23;
+  jHallKeyboard.position.z = 20;
+  jHallKeyboard.position.x = -25;
+  jHallMonitorGroup.add(jHallKeyboard);
+
   var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
   jHallMonitorGroup.position.x = -570;
   jHallMonitorGroup.position.z = -149;
