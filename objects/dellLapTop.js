@@ -2,13 +2,11 @@ DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth,closed
   closed = closed || false;
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/bumpy-black-plastic-texture.png', {}, function() {
-    renderer.render(scene);
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(1, 1 );
   var frontTexture = THREE.ImageUtils.loadTexture(texturePath, {}, function() {
-    renderer.render(scene);
   });
 
 
@@ -29,7 +27,7 @@ DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth,closed
 
 
   var keyboardTexture = THREE.ImageUtils.loadTexture('image/dellKeyBoard.png', {}, function() {
-    renderer.render(scene);
+    //renderer.render(scene);
   });
 
   keyboardTexture.wrapS = THREE.RepeatWrapping;
