@@ -47,7 +47,7 @@ function init() {
   					element.requestPointerLock();
   				}, false );
   			} else {
-  				instructions.innerHTML = 'Your browser doesn\'t seem to support Pointer Lock API';
+  				instructions.innerHTML = 'You should be ashamed of yourself!';
   			}
   			init();
   			animate();
@@ -135,16 +135,16 @@ function init() {
            //Maybe later I wont be lazy and changed the name.
            var world = new World(renderer,scene);
            scene.add(world);
-           world.position.y = -45;
+           world.position.y = -130;
            var isFloor = new ISFloor(renderer,scene);
            scene.add(isFloor);
-           isFloor.position.y = - 44;
+           isFloor.position.y = -129;
 
            var walls = new MainWalls(renderer,scene);
            scene.add(walls);
            objects.push(walls);
            walls.rotation.y = Math.PI/2
-           walls.position.y = 100;
+           walls.position.y = 18;
 
            var devDesk = new DogBoneDesk(renderer,scene,objects);
            scene.add(devDesk);
@@ -152,6 +152,7 @@ function init() {
            //devDesk.position.y = 45;
            devDesk.position.z = -50;
            devDesk.position.x = -450;
+           devDesk.position.y = -80;
            devDesk.rotation.y = 11*Math.PI/6;
 
            var qaDesk = new DogBoneDesk(renderer,scene,objects);
@@ -160,12 +161,14 @@ function init() {
            //qaDesk.position.y = 45;
            qaDesk.position.x = 100;
            qaDesk.position.z = -15;
+           qaDesk.position.y = -80;
            qaDesk.rotation.y = Math.PI/2;
 
            var zarbeckCabinet = new FilingCabinet(renderer,scene);
            scene.add(zarbeckCabinet);
            zarbeckCabinet.position.x = -600;
            zarbeckCabinet.position.z = -215;
+           zarbeckCabinet.position.y = -80;
            zarbeckCabinet.rotation.y = -Math.PI/3;
 
            var monitors = new AddMonitors(renderer, scene);
