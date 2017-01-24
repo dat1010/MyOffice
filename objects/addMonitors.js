@@ -3,22 +3,30 @@ AddMonitors = function(renderer,scene){
   scene.add(myMainMonitor);
   myMainMonitor.position.x = -358;
   myMainMonitor.position.z = 17;
-  myMainMonitor.position.y = 66;
+  myMainMonitor.position.y = -13;
   myMainMonitor.rotation.y = -Math.PI/4;
 
   var mySecondMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
   scene.add(mySecondMonitor);
   mySecondMonitor.position.x = -394;
   mySecondMonitor.position.z = -11;
-  mySecondMonitor.position.y = 66;
+  mySecondMonitor.position.y = -13;
   mySecondMonitor.rotation.y = -Math.PI/6;
 
   var myLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
   scene.add(myLaptop);
   myLaptop.position.x = -337;
   myLaptop.position.z = 50;
-  myLaptop.position.y = 60;
+  myLaptop.position.y = -20;
   myLaptop.rotation.y = -Math.PI/3;
+
+  var myKeyBoard = new KeyBoard(renderer,scene);
+  scene.add(myKeyBoard);
+  myKeyBoard.position.x = -375;
+  myKeyBoard.position.z = 30;
+  myKeyBoard.position.y = -35;
+  myKeyBoard.rotation.y = -Math.PI/5;
+
 
   var anthoniesMonitor = new Monitor(renderer,scene,'image/overwatch.png',45,30);
   //scene.add(anthoniesMonitor);
@@ -39,7 +47,7 @@ AddMonitors = function(renderer,scene){
   scene.add(anthonyConitorGroup);
   anthonyConitorGroup.position.x = -555;
   anthonyConitorGroup.position.z = -95;
-  anthonyConitorGroup.position.y = 66;
+  anthonyConitorGroup.position.y = -13;
   anthonyConitorGroup.rotation.y = -Math.PI/6;
 
 
@@ -61,7 +69,7 @@ AddMonitors = function(renderer,scene){
   var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
   jHallMonitorGroup.position.x = -570;
   jHallMonitorGroup.position.z = -149;
-  jHallMonitorGroup.position.y = 66;
+  jHallMonitorGroup.position.y = -13;
   jHallMonitorGroup.rotation.y = (3*Math.PI)/4;
 
 
@@ -76,7 +84,7 @@ AddMonitors = function(renderer,scene){
   brandonMonitorGroup.add(brandon2ndMonitor);
   brandonMonitorGroup.rotation.y =  (3*Math.PI)/3.5;
   brandonMonitorGroup.position.x = -365;
-  brandonMonitorGroup.position.y = 66;
+  brandonMonitorGroup.position.y = -13;
   brandonMonitorGroup.position.z = -12;
 
   scene.add(brandonMonitorGroup);
@@ -101,7 +109,7 @@ AddMonitors = function(renderer,scene){
   //var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
   scene.add(tomMonitorGroup);
   tomMonitorGroup.rotation.y = -Math.PI/1.9;
-  tomMonitorGroup.position.y = 66;
+  tomMonitorGroup.position.y = -13;
   tomMonitorGroup.position.x = 87;
   tomMonitorGroup.position.z = 120;
 
@@ -119,14 +127,14 @@ AddMonitors = function(renderer,scene){
   //v2ndMonitor.position.z = -5;
   vMonitorGroup.add(v2ndMonitor)
   scene.add(vMonitorGroup);
-  vMonitorGroup.position.y = 66;
+  vMonitorGroup.position.y = -13;
   vMonitorGroup.rotation.y = -Math.PI/2;
   vMonitorGroup.position.x = 87;
   vMonitorGroup.position.z = -100;
 
 
 
-  var michaelMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var michaelMonitor = new Monitor(renderer,scene,'image/geologist.png',45,30);
   michaelMonitor.rotation.y = Math.PI/3;
   var michaelGroup = new THREE.Group();
   var michael2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
@@ -144,7 +152,7 @@ AddMonitors = function(renderer,scene){
   michaelGroup.add(michael2ndMonitor);
   michaelGroup.add(michaelMonitor);
   michaelGroup.rotation.y = 5*Math.PI/4;
-  michaelGroup.position.y = 65;
+  michaelGroup.position.y = -13;
   michaelGroup.position.x = -580;
   michaelGroup.position.z = -150;
   scene.add(michaelGroup);
@@ -168,7 +176,7 @@ AddMonitors = function(renderer,scene){
 
   joshGroup.add(josh2ndMonitor);
   joshGroup.add(joshMonitor);
-  joshGroup.position.y = 65;
+  joshGroup.position.y = -13;
   joshGroup.position.x = -320;
   joshGroup.position.z = 60;
   joshGroup.rotation.y = Math.PI/3.5;
@@ -184,9 +192,9 @@ AddMonitors = function(renderer,scene){
   player2ndMonitor.position.z = -20;
   player2ndMonitor.rotation.y = -Math.PI/7;
   playerGroup.add(playerMonitor);
-  playerGroup.position.y = 65;
+  //playerGroup.position.y = 65;
   playerGroup.position.z = 150;
   playerGroup.position.x = 80;
   playerGroup.rotation.y = 11*Math.PI/6;
-  scene.add(playerGroup);
+  //scene.add(playerGroup);
 }
