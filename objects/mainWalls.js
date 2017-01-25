@@ -1,11 +1,11 @@
 MainWalls = function(renderer,scene) {
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/walltexture.png', {}, function() {
-    renderer.render(scene);
+    //renderer.render(scene);
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set( 5, 5 );
+  texture.repeat.set( 2, 2 );
   var gateMaterial = new THREE.MeshBasicMaterial({map: texture});
   var geometrySquare = new THREE.BoxGeometry(1500,280,5);
   var northWall = new THREE.Mesh(geometrySquare, gateMaterial);

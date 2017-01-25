@@ -1,13 +1,14 @@
-KeyBoard = function(renderer,scene){
+KeyBoard = function(renderer,scene,keyboardPath){
+  keyboardPath = keyboardPath || 'image/keyboard.png';
   var group = new THREE.Group();
   var texture = THREE.ImageUtils.loadTexture('image/bumpy-black-plastic-texture.png', {}, function() {
-    renderer.render(scene);
+    //renderer.render(scene);
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(1, 1 );
-  var frontTexture = THREE.ImageUtils.loadTexture('image/keyboard.png', {}, function() {
-    renderer.render(scene);
+  var frontTexture = THREE.ImageUtils.loadTexture(keyboardPath, {}, function() {
+    //renderer.render(scene);
   });
 
 
@@ -25,7 +26,11 @@ KeyBoard = function(renderer,scene){
   cubeMaterialArray.push( new THREE.MeshBasicMaterial( {map: texture} ) );
   cubeMaterialArray.push( new THREE.MeshBasicMaterial( {map: texture}  ) );
   var cubeMaterials = new THREE.MeshFaceMaterial( cubeMaterialArray );
-  var geometryKeyboard = new THREE.BoxGeometry(28,0.3,8.5);
+  var keyboardThinkness = 1.5;
+  if (keyboardPath == 'image/keyboard.png'){
+    keyboardThinkness = 0.3;
+  }
+  var geometryKeyboard = new THREE.BoxGeometry(28,keyboardThinkness,8.5);
   var keyboard = new THREE.Mesh(geometryKeyboard, cubeMaterials);
 
   group.add(keyboard);

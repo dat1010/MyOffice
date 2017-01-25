@@ -1,7 +1,7 @@
 ComputerStand =  function(renderer,scene){
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/deskTexture.png', {}, function() {
-    renderer.render(scene);
+  var texture = THREE.TextureLoader()('image/deskTexture.png', {}, function() {
+    //renderer.render(scene);
   });
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
