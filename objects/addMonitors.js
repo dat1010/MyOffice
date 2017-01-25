@@ -99,6 +99,15 @@ AddMonitors = function(renderer,scene){
   brandonMonitorGroup.position.x = -365;
   brandonMonitorGroup.position.y = -13;
   brandonMonitorGroup.position.z = -12;
+  var brandonLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  brandonLaptop.position.y = -13;
+  brandonLaptop.position.x = 38;
+  brandonLaptop.position.z = 2;
+  brandonMonitorGroup.add(brandonLaptop);
+  var brandonKeyboard = new KeyBoard(renderer,scene);
+  brandonKeyboard.position.y = -23;
+  brandonKeyboard.position.z = 17;
+  brandonMonitorGroup.add(brandonKeyboard);
 
   scene.add(brandonMonitorGroup);
 
@@ -120,6 +129,29 @@ AddMonitors = function(renderer,scene){
   tom2ndMonitor.position.z = 10;
   tom2ndMonitor.position.x = 5;
   //var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var tom1stLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  tom1stLaptop.position.y = -13;
+  tom1stLaptop.position.x = -75;
+  tom1stLaptop.rotation.y = Math.PI/20;
+  tomMonitorGroup.add(tom1stLaptop);
+  var tom1stKeyboard = new KeyBoard(renderer,scene,'image/mechanicalKeyBoard.png');
+  tom1stKeyboard.position.y = -23;
+  tom1stKeyboard.position.x = -45;
+  tom1stKeyboard.position.z = 23;
+  tom1stKeyboard.rotation.y = Math.PI/20;
+  tomMonitorGroup.add(tom1stKeyboard);
+  //'image/keyboard.png'
+  var tom2ndLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  tom2ndLaptop.position.y = -13;
+  tom2ndLaptop.position.x = -105;
+  tom2ndLaptop.rotation.y = Math.PI/20;
+  tomMonitorGroup.add(tom2ndLaptop);
+  var tom2ndKeyboard = new KeyBoard(renderer,scene,'image/mechanicalKeyBoard.png');
+  tom2ndKeyboard.position.y = -23;
+  tom2ndKeyboard.position.x = -101;
+  tom2ndKeyboard.position.z = 23;
+  tom2ndKeyboard.rotation.y = Math.PI/20;
+  tomMonitorGroup.add(tom2ndKeyboard);
   scene.add(tomMonitorGroup);
   tomMonitorGroup.rotation.y = -Math.PI/1.9;
   tomMonitorGroup.position.y = -13;
@@ -138,6 +170,10 @@ AddMonitors = function(renderer,scene){
   var v2ndMonitor = new Monitor(renderer,scene,'image/scubaDubaDuba.png',45,30);
   //v2ndMonitor.position.x = ;
   //v2ndMonitor.position.z = -5;
+  var vKeyboard = new KeyBoard(renderer,scene);
+  vKeyboard.position.y = -23;
+  vKeyboard.position.z = 15;
+  vMonitorGroup.add(vKeyboard);
   vMonitorGroup.add(v2ndMonitor)
   scene.add(vMonitorGroup);
   vMonitorGroup.position.y = -13;
