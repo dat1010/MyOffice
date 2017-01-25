@@ -1,13 +1,11 @@
 DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth,closed){
   closed = closed || false;
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/bumpy-black-plastic-texture.png', {}, function() {
-  });
+  var texture = new THREE.TextureLoader().load('image/bumpy-black-plastic-texture.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(1, 1 );
-  var frontTexture = THREE.ImageUtils.loadTexture(texturePath, {}, function() {
-  });
+  var frontTexture = new THREE.TextureLoader().load(texturePath);
 
 
   frontTexture.wrapS = THREE.RepeatWrapping;
