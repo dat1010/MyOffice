@@ -60,7 +60,7 @@ function init() {
   			var prevTime = performance.now();
   			var velocity = new THREE.Vector3();
   			function init() {
-  				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
+  				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 20000 );
 
   				scene = new THREE.Scene();
   				//scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
@@ -142,13 +142,13 @@ function init() {
 
            var walls = new MainWalls(renderer,scene);
            scene.add(walls);
-           objects.push(walls);
+           //objects.push(walls);
            walls.rotation.y = Math.PI/2
            walls.position.y = 18;
 
            var devDesk = new DogBoneDesk(renderer,scene,objects);
            scene.add(devDesk);
-           objects.push(devDesk);
+           //objects.push(devDesk);
            //devDesk.position.y = 45;
            devDesk.position.z = -50;
            devDesk.position.x = -450;
@@ -157,7 +157,7 @@ function init() {
 
            var qaDesk = new DogBoneDesk(renderer,scene,objects);
            scene.add(qaDesk);
-           objects.push(qaDesk);
+           //objects.push(qaDesk);
            //qaDesk.position.y = 45;
            qaDesk.position.x = 100;
            qaDesk.position.z = -15;

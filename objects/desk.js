@@ -1,8 +1,6 @@
 DogBoneDesk = function(renderer,scene){
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/deskTexture.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var texture = new THREE.TextureLoader().load('image/deskTexture.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 5, 5 );
@@ -32,9 +30,7 @@ DogBoneDesk = function(renderer,scene){
 
 
   /*Divider Group*/
-  var dividerTexture = THREE.ImageUtils.loadTexture('image/pinBoard.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var dividerTexture = new THREE.TextureLoader().load('image/pinBoard.png');
   dividerTexture.wrapS = THREE.RepeatWrapping;
   dividerTexture.wrapT = THREE.RepeatWrapping;
   dividerTexture.repeat.set( 4, 4 );

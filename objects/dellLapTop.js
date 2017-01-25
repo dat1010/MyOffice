@@ -24,9 +24,7 @@ DellLapTop = function(renderer,scene,texturePath,screenLength,screenWidth,closed
   var cubeMaterials = new THREE.MeshFaceMaterial( cubeMaterialArray );
 
 
-  var keyboardTexture = THREE.ImageUtils.loadTexture('image/dellKeyBoard.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var keyboardTexture = new THREE.TextureLoader().load('image/dellKeyBoard.png');
 
   keyboardTexture.wrapS = THREE.RepeatWrapping;
   keyboardTexture.wrapT = THREE.RepeatWrapping;

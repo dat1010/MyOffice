@@ -1,8 +1,6 @@
 MainWalls = function(renderer,scene) {
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/walltexture.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var texture = new THREE.TextureLoader().load('image/walltexture.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 2, 2 );

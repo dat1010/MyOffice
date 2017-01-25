@@ -1,15 +1,10 @@
 Monitor = function(renderer,scene,texturePath,screenLength,screenWidth){
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/bumpy-black-plastic-texture.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var texture = new THREE.TextureLoader().load('image/bumpy-black-plastic-texture.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(1, 1 );
-  var frontTexture = THREE.ImageUtils.loadTexture(texturePath, {}, function() {
-    //renderer.render(scene);
-  });
-
+  var frontTexture = new THREE.TextureLoader().load(texturePath);
 
   frontTexture.wrapS = THREE.RepeatWrapping;
   frontTexture.wrapT = THREE.RepeatWrapping;
@@ -42,8 +37,19 @@ Monitor = function(renderer,scene,texturePath,screenLength,screenWidth){
   var bottonStand = new THREE.Mesh(bottomStandGeometry,standMaterial);
   bottonStand.position.y = -22;
 
-  group.add(stand);
-  group.add(bottonStand);
-  group.add(screen);
+  //group.add(stand);
+  //group.add(bottonStand);
+  //group.add(screen);
+  //http://stackoverflow.com/questions/30245990/how-to-merge-two-geometries-or-meshes-using-three-js-r71
+  //Work on this more. must be efficient
+  var singleGeometry = new THREE.Geometry();
+  stand.updateMatrix();
+  singleGeometry.merge(stand.geometry, stand.matrix);
+  bottonStand.updateMatrix();
+  singleGeometry.merge(bottonStand.geometry,bottonStand.matrix);
+  screen.updateMatrix();
+  singleGeometry.merge(screen.geometry,screen.matrix);
+  var mesh = new THREE.Mesh(singleGeometry,standMaterial);
+  group.add(mesh);
   return group;
 }

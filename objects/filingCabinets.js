@@ -1,14 +1,10 @@
 FilingCabinet = function(renderer,scene){
   var group = new THREE.Group();
-  var texture = THREE.ImageUtils.loadTexture('image/cement.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var texture = new THREE.TextureLoader().load('image/cement.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 1, 1 );
-  var frontTexture = THREE.ImageUtils.loadTexture('image/fileCabinet.png', {}, function() {
-    //renderer.render(scene);
-  });
+  var frontTexture = new THREE.TextureLoader().load('image/fileCabinet.png');
   frontTexture.wrapS = THREE.RepeatWrapping;
   frontTexture.wrapT = THREE.RepeatWrapping;
   frontTexture.repeat.set( 1, 1 );

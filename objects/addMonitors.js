@@ -1,4 +1,6 @@
 AddMonitors = function(renderer,scene){
+  //var monitorSystemGeometry = new THREE.Geometry();
+  //monitorSystemGeometry.vertices.push(new THREE.Vector3(-358,17,-13));
   var myMainMonitor = new Monitor(renderer,scene,'image/MyComputer.png',45,30);
   scene.add(myMainMonitor);
   myMainMonitor.position.x = -358;
