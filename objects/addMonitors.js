@@ -138,7 +138,7 @@ AddMonitors = function(renderer,scene){
   tomMonitorGroup.add(tom1stLaptop);
   var tom1stKeyboard = new KeyBoard(renderer,scene,'image/mechanicalKeyBoard.png');
   tom1stKeyboard.position.y = -23;
-  tom1stKeyboard.position.x = -45;
+  tom1stKeyboard.position.x = -70;
   tom1stKeyboard.position.z = 23;
   tom1stKeyboard.rotation.y = Math.PI/20;
   tomMonitorGroup.add(tom1stKeyboard);
@@ -161,7 +161,7 @@ AddMonitors = function(renderer,scene){
   tomMonitorGroup.position.z = 120;
 
 
-  var vMonitor = new Monitor(renderer,scene,'image/theLongMonitor.png',45,30);
+  /*var vMonitor = new Monitor(renderer,scene,'image/theLongMonitor.png',45,30);
   //scene.add(anthoniesMonitor);
   var vMonitorGroup = new THREE.Group();
   vMonitor.position.x = -45;
@@ -181,8 +181,7 @@ AddMonitors = function(renderer,scene){
   vMonitorGroup.position.y = -13;
   vMonitorGroup.rotation.y = -Math.PI/2;
   vMonitorGroup.position.x = 87;
-  vMonitorGroup.position.z = -100;
-
+  vMonitorGroup.position.z = -100;*/
 
 
   var michaelMonitor = new Monitor(renderer,scene,'image/geologist.png',45,30);

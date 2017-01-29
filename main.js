@@ -173,8 +173,6 @@ function init() {
 
            var monitors = new AddMonitors(renderer, scene);
 
-
-
   			/*	geometry = new THREE.BoxGeometry( 20, 20, 20 );
   				for ( var i = 0, l = geometry.faces.length; i < l; i ++ ) {
   					var face = geometry.faces[ i ];
