@@ -32,11 +32,11 @@ Monitor = function(renderer,scene,texturePath,screenLength,screenWidth){
   var standGeometry = new THREE.BoxGeometry(10,10,3);
   var stand = new THREE.Mesh(standGeometry,standMaterial);
   stand.position.y = -18;
-  //stand.position.z = -1.8;
+  stand.rotation.y = Math.PI;
   var bottomStandGeometry = new THREE.BoxGeometry(20,2,8);
-  var bottonStand = new THREE.Mesh(bottomStandGeometry,standMaterial);
+  var bottonStand = new THREE.Mesh(bottomStandGeometry,cubeMaterials);
   bottonStand.position.y = -22;
-
+  bottonStand.rotation.y = Math.PI;
   //group.add(stand);
   //group.add(bottonStand);
   //group.add(screen);
@@ -49,7 +49,10 @@ Monitor = function(renderer,scene,texturePath,screenLength,screenWidth){
   singleGeometry.merge(bottonStand.geometry,bottonStand.matrix);
   screen.updateMatrix();
   singleGeometry.merge(screen.geometry,screen.matrix);
-  var mesh = new THREE.Mesh(singleGeometry,standMaterial);
+  singleGeometry.mergeVertices();
+  var mesh = new THREE.Mesh(singleGeometry, cubeMaterials);
+  mesh.geometry.computeFaceNormals();
+  mesh.geometry.computeVertexNormals();
   group.add(mesh);
   return group;
 }

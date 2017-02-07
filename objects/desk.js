@@ -202,23 +202,23 @@ DogBoneDesk = function(renderer,scene){
   square.updateMatrix();
   deskGeometry.merge(square.geometry, square.matrix);
 
-  var rightCabinet = new FilingCabinet(renderer,scene);
-  var leftCabinet = new FilingCabinet(renderer,scene);
+  var rightCabinet = new FilingCabinet(renderer,scene,deskGeometry);
+  var leftCabinet = new FilingCabinet(renderer,scene,deskGeometry);
   //rightCabinet.rotation.y = Math.PI/2;
   rightCabinet.position.z = 22.5;
   rightCabinet.position.x = 15;
   rightCabinet.updateMatrix();
-  deskGeometry.mergeMesh(rightCabinet);
+  //deskGeometry.mergeMesh(rightCabinet);
   leftCabinet.position.z = 22.5;
   leftCabinet.position.x = -15;
 
-  /*var cabinetGroup = new THREE.Group();
+  var cabinetGroup = new THREE.Group();
   cabinetGroup.add(rightCabinet);
-  cabinetGroup.add(leftCabinet);*/
+  cabinetGroup.add(leftCabinet);
 
-  /*var otherCabinetGroup = new THREE.Group();
+  var otherCabinetGroup = new THREE.Group();
   otherCabinetGroup = cabinetGroup.clone();
-  otherCabinetGroup.rotation.y = Math.PI;*/
+  otherCabinetGroup.rotation.y = Math.PI;
 
 
   middleDivider.updateMatrix();
@@ -241,7 +241,7 @@ DogBoneDesk = function(renderer,scene){
   //group.add(rightLegGroup);
   //group.add(leftLegGroup);
   //group.add(square);
-  //group.add(cabinetGroup);
-  //group.add(otherCabinetGroup);
+  group.add(cabinetGroup);
+  group.add(otherCabinetGroup);
   return group;
 }

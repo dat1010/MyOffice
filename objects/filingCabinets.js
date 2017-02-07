@@ -1,4 +1,4 @@
-FilingCabinet = function(renderer,scene){
+FilingCabinet = function(renderer,scene,deskGeometry){
   var group = new THREE.Group();
   var texture = new THREE.TextureLoader().load('image/cement.png');
   texture.wrapS = THREE.RepeatWrapping;
@@ -24,7 +24,6 @@ FilingCabinet = function(renderer,scene){
   var geometrySquare = new THREE.BoxGeometry(30,84,45);
   var middleLeg = new THREE.Mesh(geometrySquare, cubeMaterials);
 
-
   group.add(middleLeg);
-  return group;
+  return middleLeg;
 }

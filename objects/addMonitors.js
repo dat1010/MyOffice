@@ -114,7 +114,7 @@ AddMonitors = function(renderer,scene){
   scene.add(brandonMonitorGroup);
 
 
-  var tomMonitor = new Monitor(renderer,scene,'image/theLongMonitor.png',45,30);
+  var tomMonitor = new Monitor(renderer,scene,'image/vb6.png',45,30);
   //scene.add(anthoniesMonitor);
   var tomMonitorGroup = new THREE.Group();
   tomMonitor.position.x = -40;
