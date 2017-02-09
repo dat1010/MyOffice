@@ -6,11 +6,12 @@ if ( ! Detector.webgl ) {
 }
 init();
 function init() {
-  var camera, scene, renderer;
+        var camera, scene, renderer;
   			var geometry, material, mesh;
   			var controls;
   			var objects = [];
   			var raycaster;
+        var firstLoad = true;
   			var blocker = document.getElementById( 'blocker' );
   			var instructions = document.getElementById( 'instructions' );
   			// http://www.html5rocks.com/en/tutorials/pointerlock/intro/
@@ -56,6 +57,8 @@ function init() {
   			var moveBackward = false;
   			var moveLeft = false;
   			var moveRight = false;
+        var resetPosition = false;
+        var activate = false;
   			var canJump = false;
   			var prevTime = performance.now();
   			var velocity = new THREE.Vector3();
@@ -88,6 +91,12 @@ function init() {
   							if ( canJump === true ) velocity.y += 350;
   							canJump = false;
   							break;
+              case 82: //r
+                resetPosition = true;
+                break;
+              case 69: //e interact
+                activate = true;
+                break;
   					}
   				};
   				var onKeyUp = function ( event ) {
@@ -108,6 +117,12 @@ function init() {
   						case 68: // d
   							moveRight = false;
   							break;
+              case 82: //r
+                resetPosition = false;
+                break;
+              case 69: //e interact
+                activate = false;
+                break;
   					}
   				};
   				document.addEventListener( 'keydown', onKeyDown, false );
@@ -133,9 +148,9 @@ function init() {
 
            //This really isn't the world just the foundation or cement of the parking lot.
            //Maybe later I wont be lazy and changed the name.
-           var world = new World(renderer,scene);
+           /*var world = new World(renderer,scene);
            scene.add(world);
-           world.position.y = -130;
+           world.position.y = -130;*/
            var isFloor = new ISFloor(renderer,scene);
            scene.add(isFloor);
            isFloor.position.y = -129;
@@ -204,13 +219,33 @@ function init() {
   				camera.updateProjectionMatrix();
   				renderer.setSize( window.innerWidth, window.innerHeight );
   			}
+
+        function isInBubble(myPositionX,myPositionZ,x,z){
+          var distance;
+          distance = Math.sqrt(Math.pow((myPositionX-x), 2) + Math.pow(myPositionZ-z,2));
+          if (distance == 30 || distance < 30){
+            return true;
+          }
+          return false;
+        }
+
+        function checkArea(myPosition,x1,x2,z1,z2){
+          //are you ready for this?
+          if ( myPosition.getObject().position.x > x1 &&
+                myPosition.getObject().position.z > z1 &&
+                myPosition.getObject().position.z < z2 &&
+                myPosition.getObject().position.x < x2 ) {
+            return true;
+          }
+          return false;
+        }
   			function animate() {
   				requestAnimationFrame( animate );
   				if ( controlsEnabled ) {
   					raycaster.ray.origin.copy( controls.getObject().position );
   					raycaster.ray.origin.y -= 10;
-  					var intersections = raycaster.intersectObjects( objects );
-  					var isOnObject = intersections.length > 0;
+  					//var intersections = raycaster.intersectObjects( objects );
+  					//var isOnObject = intersections.length > 0;
   					var time = performance.now();
   					var delta = ( time - prevTime ) / 1000;
   					velocity.x -= velocity.x * 10.0 * delta;
@@ -220,10 +255,10 @@ function init() {
   					if ( moveBackward ) velocity.z += 600.0 * 2.5*delta;
   					if ( moveLeft ) velocity.x -= 600.0 * 2.5*delta;
   					if ( moveRight ) velocity.x += 600.0 * 2.5*delta;
-  					if ( isOnObject === true ) {
+  					/*if ( isOnObject === true ) {
   						velocity.y = Math.max( 0, velocity.y );
   						canJump = true;
-  					}
+  					}*/
   					controls.getObject().translateX( velocity.x * delta );
   					controls.getObject().translateY( velocity.y * delta );
   					controls.getObject().translateZ( velocity.z * delta );
@@ -232,7 +267,29 @@ function init() {
   						controls.getObject().position.y = 10;
   						canJump = true;
   					}
+            console.log('x=' + controls.getObject().position.x + ' y=' + controls.getObject().position.y + ' z=' + controls.getObject().position.z);
+            if (resetPosition == true){
+              controls.getObject().position.y = 10;
+              controls.getObject().position.z = 0;
+              controls.getObject().position.x = 0;
+            }
+            if (firstLoad == true){
+              controls.getObject().position.y = 10;
+              controls.getObject().position.z = 205;
+              controls.getObject().position.x = 103;
+              firstLoad = false;
+            }
+            if (activate == true){
+              if (isInBubble(controls.getObject().position.x,controls.getObject().position.z,-399,48) ){
+                //alter("It worked");
+                console.log("test");
+              }
+            }
+
+            //myMainMonitor.position.x = -358;
+            //myMainMonitor.position.z = 17;
   					prevTime = time;
+
   				}
 
   				renderer.render( scene, camera );
