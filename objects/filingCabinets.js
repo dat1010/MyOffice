@@ -1,10 +1,10 @@
-FilingCabinet = function(renderer,scene,deskGeometry){
+FilingCabinet = function(renderer,scene,deskGeometry,microcache){
   var group = new THREE.Group();
-  var texture = new THREE.TextureLoader().load('image/cement.png');
+  var texture = microcache.getSet('cementCacheTexture', new THREE.TextureLoader().load('image/cement.png'));
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 1, 1 );
-  var frontTexture = new THREE.TextureLoader().load('image/fileCabinet.png');
+  var frontTexture =   microcache.getSet('fileCabinetCacheTexture', new THREE.TextureLoader().load('image/fileCabinet.png'));
   frontTexture.wrapS = THREE.RepeatWrapping;
   frontTexture.wrapT = THREE.RepeatWrapping;
   frontTexture.repeat.set( 1, 1 );

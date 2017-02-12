@@ -7,6 +7,8 @@ if ( ! Detector.webgl ) {
 init();
 function init() {
         var camera, scene, renderer;
+        //renderer._microCache = new MicroCache();
+        var microcache = new MicroCache();
   			var geometry, material, mesh;
   			var controls;
   			var objects = [];
@@ -151,17 +153,17 @@ function init() {
            /*var world = new World(renderer,scene);
            scene.add(world);
            world.position.y = -130;*/
-           var isFloor = new ISFloor(renderer,scene);
+           var isFloor = new ISFloor(renderer,scene,microcache);
            scene.add(isFloor);
            isFloor.position.y = -129;
 
-           var walls = new MainWalls(renderer,scene);
+           var walls = new MainWalls(renderer,scene,microcache);
            scene.add(walls);
            //objects.push(walls);
            walls.rotation.y = Math.PI/2
            walls.position.y = 18;
 
-           var devDesk = new DogBoneDesk(renderer,scene,objects);
+           var devDesk = new DogBoneDesk(renderer,scene,microcache);
            scene.add(devDesk);
            //objects.push(devDesk);
            //devDesk.position.y = 45;
@@ -170,7 +172,7 @@ function init() {
            devDesk.position.y = -80;
            devDesk.rotation.y = 11*Math.PI/6;
 
-           var qaDesk = new DogBoneDesk(renderer,scene,objects);
+           var qaDesk = new DogBoneDesk(renderer,scene,microcache);
            scene.add(qaDesk);
            //objects.push(qaDesk);
            //qaDesk.position.y = 45;
@@ -179,14 +181,14 @@ function init() {
            qaDesk.position.y = -80;
            qaDesk.rotation.y = Math.PI/2;
 
-           var zarbeckCabinet = new FilingCabinet(renderer,scene);
+           var zarbeckCabinet = new FilingCabinet(renderer,scene,null,microcache);
            scene.add(zarbeckCabinet);
            zarbeckCabinet.position.x = -600;
            zarbeckCabinet.position.z = -215;
            zarbeckCabinet.position.y = -80;
            zarbeckCabinet.rotation.y = -Math.PI/3;
 
-           var monitors = new AddMonitors(renderer, scene);
+           var monitors = new AddMonitors(renderer, scene,microcache);
 
   			/*	geometry = new THREE.BoxGeometry( 20, 20, 20 );
   				for ( var i = 0, l = geometry.faces.length; i < l; i ++ ) {
@@ -229,16 +231,6 @@ function init() {
           return false;
         }
 
-        function checkArea(myPosition,x1,x2,z1,z2){
-          //are you ready for this?
-          if ( myPosition.getObject().position.x > x1 &&
-                myPosition.getObject().position.z > z1 &&
-                myPosition.getObject().position.z < z2 &&
-                myPosition.getObject().position.x < x2 ) {
-            return true;
-          }
-          return false;
-        }
   			function animate() {
   				requestAnimationFrame( animate );
   				if ( controlsEnabled ) {
@@ -274,15 +266,15 @@ function init() {
               controls.getObject().position.x = 0;
             }
             if (firstLoad == true){
-              controls.getObject().position.y = 10;
-              controls.getObject().position.z = 205;
-              controls.getObject().position.x = 103;
+              //controls.getObject().position.y = 10;
+              //controls.getObject().position.z = 205;
+              //controls.getObject().position.x = 103;
               firstLoad = false;
             }
             if (activate == true){
               if (isInBubble(controls.getObject().position.x,controls.getObject().position.z,-399,48) ){
                 //alter("It worked");
-                console.log("test");
+                //console.log("test");
               }
             }
 

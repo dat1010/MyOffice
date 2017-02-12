@@ -1,6 +1,7 @@
-ISFloor = function(renderer,scene){
+ISFloor = function(renderer,scene,microcache){
   var group = new THREE.Group();
-  var texture = new THREE.TextureLoader().load('image/betterCheckered.png');
+
+  var texture =   microcache.getSet('floorCacheTexture', new THREE.TextureLoader().load('image/betterCheckered.png'));
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 4, 4 );

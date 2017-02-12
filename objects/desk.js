@@ -1,8 +1,8 @@
-DogBoneDesk = function(renderer,scene){
+DogBoneDesk = function(renderer,scene,microcache){
   var group = new THREE.Group();
   var singleGeometry = new THREE.Geometry();
   var deskGeometry = new THREE.Geometry();
-  var texture = new THREE.TextureLoader().load('image/deskTexture.png');
+  var texture = microcache.getSet('deskCacheTexture', new THREE.TextureLoader().load('image/deskTexture.png'));
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 5, 5 );
@@ -52,7 +52,8 @@ DogBoneDesk = function(renderer,scene){
 
 
   /*Divider Group*/
-  var dividerTexture = new THREE.TextureLoader().load('image/pinBoard.png');
+
+  var dividerTexture = microcache.getSet('deskpinBoardCacheTexture', new THREE.TextureLoader().load('image/pinBoard.png'));
   dividerTexture.wrapS = THREE.RepeatWrapping;
   dividerTexture.wrapT = THREE.RepeatWrapping;
   dividerTexture.repeat.set( 4, 4 );
@@ -202,8 +203,8 @@ DogBoneDesk = function(renderer,scene){
   square.updateMatrix();
   deskGeometry.merge(square.geometry, square.matrix);
 
-  var rightCabinet = new FilingCabinet(renderer,scene,deskGeometry);
-  var leftCabinet = new FilingCabinet(renderer,scene,deskGeometry);
+  var rightCabinet = new FilingCabinet(renderer,scene,deskGeometry,microcache);
+  var leftCabinet = new FilingCabinet(renderer,scene,deskGeometry,microcache);
   //rightCabinet.rotation.y = Math.PI/2;
   rightCabinet.position.z = 22.5;
   rightCabinet.position.x = 15;

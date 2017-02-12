@@ -1,4 +1,4 @@
-AddMonitors = function(renderer,scene){
+AddMonitors = function(renderer,scene,microcache){
   //var monitorSystemGeometry = new THREE.Geometry();
   //monitorSystemGeometry.vertices.push(new THREE.Vector3(-358,17,-13));
   var myMainMonitor = new Monitor(renderer,scene,'image/MyComputer.png',45,30);
@@ -15,7 +15,7 @@ AddMonitors = function(renderer,scene){
   mySecondMonitor.position.y = -13;
   mySecondMonitor.rotation.y = -Math.PI/6;
 
-  var myLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var myLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   scene.add(myLaptop);
   myLaptop.position.x = -337;
   myLaptop.position.z = 50;
@@ -37,11 +37,11 @@ AddMonitors = function(renderer,scene){
   anthoniesMonitor.position.z = 5;
   anthoniesMonitor.rotation.y = Math.PI/4;
   anthonyConitorGroup.add(anthoniesMonitor);
-  var anthonies2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var anthonies2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30);
   anthonies2ndMonitor.position.x = 18;
   anthonies2ndMonitor.position.z = -5;
   anthonyConitorGroup.add(anthonies2ndMonitor)
-  var anthoniesLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var anthoniesLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   anthonyConitorGroup.add(anthoniesLaptop);
   anthoniesLaptop.position.x = 55;
   anthoniesLaptop.position.y = -6;
@@ -81,7 +81,7 @@ AddMonitors = function(renderer,scene){
   jHallKeyboard.position.x = -25;
   jHallMonitorGroup.add(jHallKeyboard);
 
-  var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var jHall3rdMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30);
   jHallMonitorGroup.position.x = -570;
   jHallMonitorGroup.position.z = -149;
   jHallMonitorGroup.position.y = -13;
@@ -92,7 +92,7 @@ AddMonitors = function(renderer,scene){
   var brandonMonitorGroup = new THREE.Group();
   brandonMonitorGroup.add(brandonMonitor);
 
-  var brandon2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var brandon2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30);
   brandon2ndMonitor.position.x = -45
   brandon2ndMonitor.rotation.y = Math.PI/7;
   brandon2ndMonitor.position.z = 10;
@@ -101,7 +101,7 @@ AddMonitors = function(renderer,scene){
   brandonMonitorGroup.position.x = -365;
   brandonMonitorGroup.position.y = -13;
   brandonMonitorGroup.position.z = -12;
-  var brandonLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var brandonLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   brandonLaptop.position.y = -13;
   brandonLaptop.position.x = 38;
   brandonLaptop.position.z = 2;
@@ -131,7 +131,7 @@ AddMonitors = function(renderer,scene){
   tom2ndMonitor.position.z = 10;
   tom2ndMonitor.position.x = 5;
   //var jHall3rdMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
-  var tom1stLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var tom1stLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   tom1stLaptop.position.y = -13;
   tom1stLaptop.position.x = -75;
   tom1stLaptop.rotation.y = Math.PI/20;
@@ -143,7 +143,7 @@ AddMonitors = function(renderer,scene){
   tom1stKeyboard.rotation.y = Math.PI/20;
   tomMonitorGroup.add(tom1stKeyboard);
   //'image/keyboard.png'
-  var tom2ndLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var tom2ndLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   tom2ndLaptop.position.y = -13;
   tom2ndLaptop.position.x = -105;
   tom2ndLaptop.rotation.y = Math.PI/20;
@@ -187,12 +187,12 @@ AddMonitors = function(renderer,scene){
   var michaelMonitor = new Monitor(renderer,scene,'image/geologist.png',45,30);
   michaelMonitor.rotation.y = Math.PI/3;
   var michaelGroup = new THREE.Group();
-  var michael2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var michael2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30);
   michael2ndMonitor.position.x = 35;
   michael2ndMonitor.position.z = -20;
   michael2ndMonitor.rotation.y = -Math.PI/7;
 
-  var michaelComputer = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var michaelComputer = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   michaelComputer.position.y = -13;
   michaelComputer.position.z = -3;
   michaelComputer.position.x = 66;
@@ -209,15 +209,15 @@ AddMonitors = function(renderer,scene){
 
 
 
-  var joshMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var joshMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30);
   joshMonitor.rotation.y = Math.PI/3;
   var joshGroup = new THREE.Group();
-  var josh2ndMonitor = new Monitor(renderer,scene,'image/mySecondScreem.png',45,30);
+  var josh2ndMonitor = new Monitor(renderer,scene,'image/jogging.png',45,30);
   josh2ndMonitor.position.x = 35;
   josh2ndMonitor.position.z = -20;
   josh2ndMonitor.rotation.y = -Math.PI/7;
 
-  var joshComputer = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17);
+  var joshComputer = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   joshComputer.position.y = -13;
   joshComputer.position.z = -3;
   joshComputer.position.x = 66;
