@@ -1,10 +1,11 @@
-Monitor = function(renderer,scene,texturePath,screenLength,screenWidth){
+Monitor = function(renderer,scene,texturePath,screenLength,screenWidth,microcache){
   var group = new THREE.Group();
-  var texture = new THREE.TextureLoader().load('image/bumpy-black-plastic-texture.png');
+  var texture =  microcache.getSet('bumpyPlasticCacheTexture', new THREE.TextureLoader().load('image/bumpy-black-plastic-texture.png'));
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(1, 1 );
-  var frontTexture = new THREE.TextureLoader().load(texturePath);
+
+  var frontTexture = microcache.getSet(texturePath, new THREE.TextureLoader().load(texturePath));
 
   frontTexture.wrapS = THREE.RepeatWrapping;
   frontTexture.wrapT = THREE.RepeatWrapping;
