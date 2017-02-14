@@ -21,8 +21,30 @@ SupportDesk = function(renderer,scene,microcache){
   bradDesk.position.x = 642;
   bradDesk.position.z = -142;
 
-  var dellDesk = new THREE.BoxGeometry(200,84,0.5);
+  var dellDeskGeometry = new THREE.BoxGeometry(116,84,0.5);
+  var dellDesk = new THREE.Mesh(dellDeskGeometry,deskMaterial);
+  dellDesk.rotation.x = Math.PI/2;
+  dellDesk.position.y = -37;
+  dellDesk.position.x = 600;
+  dellDesk.position.z = 458;
 
+  //var dellDeskGeometry = new THREE.BoxGeometry(116,84,0.5);
+  var jasonDesk = new THREE.Mesh(dellDeskGeometry,deskMaterial);
+  jasonDesk.rotation.x = Math.PI/2;
+  jasonDesk.position.y = -37;
+  jasonDesk.position.x = 600;
+  jasonDesk.position.z = 158;
+
+  var cabinet = new SupportCabinet(renderer,scene,microcache);
+  cabinet.rotation.y = -Math.PI/2;
+  cabinet.position.x = 725;
+  cabinet.position.y = 50;
+  cabinet.position.z = 160;
+
+
+  group.add(cabinet);
+  group.add(jasonDesk);
+  group.add(dellDesk);
   group.add(bradDesk);
   group.add(mainTop);
   return group

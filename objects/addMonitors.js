@@ -254,7 +254,7 @@ AddMonitors = function(renderer,scene,microcache){
   blakeMonitor.position.x = 735;
   blakeMonitor.position.z = -590;
   scene.add(blakeMonitor);
-  var blake2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
+  var blake2ndMonitor = new Monitor(renderer,scene,'image/archer.png',45,30,microcache);
   blake2ndMonitor.rotation.y = -Math.PI/4
   blake2ndMonitor.position.y = -10;
   blake2ndMonitor.position.x = 715;
@@ -270,34 +270,40 @@ AddMonitors = function(renderer,scene,microcache){
   scene.add(mac);
 
 
-  var dlisaMonitor = new Monitor(renderer,scene,'image/makinBacon.png',45,30,microcache);
+  var dlisaMonitor = new Monitor(renderer,scene,'image/vegies.png',45,30,microcache);
+  //dlisaMonitor.position.y = -13;
+  dlisaMonitor.rotation.y = -Math.PI/4.5;
+  dlisaMonitor.position.x = 30;
+  dlisaMonitor.position.z = 20;
   var dlisaMonitorGroup = new THREE.Group();
   dlisaMonitorGroup.add(dlisaMonitor);
 
   var dlisa2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
   dlisa2ndMonitor.position.x = -45
-  dlisa2ndMonitor.rotation.y = Math.PI/7;
-  dlisa2ndMonitor.position.z = 10;
+  //dlisa2ndMonitor.rotation.y = Math.PI/7;
+  dlisa2ndMonitor.position.z = 7;
   dlisaMonitorGroup.add(dlisa2ndMonitor);
-  dlisaMonitorGroup.rotation.y =  (3*Math.PI)/3.5;
-  //dlisaMonitorGroup.position.x = -365;
-  //dlisaMonitorGroup.position.y = -13;
-  //dlisaMonitorGroup.position.z = -12;
   var dlisaLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   dlisaLaptop.position.y = -13;
-  dlisaLaptop.position.x = 38;
-  dlisaLaptop.position.z = 2;
+  dlisaLaptop.position.x = -5;
+  dlisaLaptop.position.z = 5;
   dlisaMonitorGroup.add(dlisaLaptop);
   var dlisaKeyboard = new KeyBoard(renderer,scene);
-  dlisaKeyboard.position.y = -23;
-  dlisaKeyboard.position.z = -17;
-  dlisaMonitorGroup.add(dlisaKeyboard);
 
+  dlisaKeyboard.position.y = -35;
+  dlisaKeyboard.position.z = -120;
+  dlisaKeyboard.position.x = 130;
+  dlisaKeyboard.rotation.y = Math.PI/2;
+  dlisaMonitorGroup.add(dlisaKeyboard);
+  dlisaMonitorGroup.position.x = 100;
+  dlisaMonitorGroup.position.y = -13;
+  dlisaMonitorGroup.position.z = -120;
+  dlisaMonitorGroup.rotation.y = Math.PI/2;
   scene.add(dlisaKeyboard);
   scene.add(dlisaMonitorGroup);
 
 
-  var mikeMonitor = new Monitor(renderer,scene,'image/makinBacon.png',45,30,microcache);
+  var mikeMonitor = new Monitor(renderer,scene,'image/rogueOne.png',45,30,microcache);
   var mikeMonitorGroup = new THREE.Group();
   mikeMonitorGroup.add(mikeMonitor);
 
@@ -307,20 +313,53 @@ AddMonitors = function(renderer,scene,microcache){
   mike2ndMonitor.position.z = 10;
   mikeMonitorGroup.add(mike2ndMonitor);
   mikeMonitorGroup.rotation.y =  (3*Math.PI)/3.5;
-  //mikeMonitorGroup.position.x = -365;
-  //mikeMonitorGroup.position.y = -13;
-  //mikeMonitorGroup.position.z = -12;
+
   var mikeLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
   mikeLaptop.position.y = -13;
   mikeLaptop.position.x = 38;
   mikeLaptop.position.z = 2;
   mikeMonitorGroup.add(mikeLaptop);
   var mikeKeyboard = new KeyBoard(renderer,scene);
-  mikeKeyboard.position.y = -23;
-  mikeKeyboard.position.z = -17;
+  mikeKeyboard.position.y = -35;
+  mikeKeyboard.position.z = 75;
+  mikeKeyboard.position.x = 125;
+  mikeKeyboard.rotation.y = Math.PI/2;
   mikeMonitorGroup.add(mikeKeyboard);
+  mikeMonitorGroup.rotation.y = Math.PI/2;
+  mikeMonitorGroup.position.x = 110;
+  mikeMonitorGroup.position.y = -13;
+  mikeMonitorGroup.position.z = 70;
 
   scene.add(mikeKeyboard);
   scene.add(mikeMonitorGroup);
 
+
+  var hungerGamesMonitor = new Monitor(renderer,scene,'image/hungerGames2.png',45,30,microcache);
+  hungerGamesMonitor.rotation.y = -Math.PI/3;
+  hungerGamesMonitor.position.y = 97;
+  hungerGamesMonitor.position.x = 710;
+  hungerGamesMonitor.position.z = -170;
+  scene.add(hungerGamesMonitor);
+
+
+  var aaronMonitorGroup = new THREE.Group();
+  var aaronMonitor = new Monitor(renderer,scene,'image/raceCar.png',45,30,microcache);
+  aaronMonitor.position.x = 35;
+  aaronMonitor.position.z = -6
+  aaronMonitor.rotation.y = -Math.PI/4;
+
+  aaronMonitorGroup.add(aaronMonitor);
+  var aaronLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
+  aaronLaptop.position.y = -13;
+  aaronLaptop.rotation.y = Math.PI/6;
+  aaronLaptop.position.x = 7
+  aaronLaptop.position.z = -5;
+  aaronMonitorGroup.add(aaronLaptop);
+  aaronMonitorGroup.rotation.y = Math.PI;
+  aaronMonitorGroup.position.x = 120;
+  aaronMonitorGroup.position.y = -13;
+  aaronMonitorGroup.position.z = -168;
+
+
+  scene.add(aaronMonitorGroup);
 }

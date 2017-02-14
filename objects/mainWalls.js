@@ -1,7 +1,7 @@
 MainWalls = function(renderer,scene,microcache) {
   var group = new THREE.Group();
 
-  var texture = microcache.getSet('wallTexture', new THREE.TextureLoader().load('image/walltexture.png'));
+  var texture = microcache.getSet('wallTexture', new THREE.TextureLoader().load('image/wallTexture.png'));
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set( 2, 2 );
@@ -94,7 +94,7 @@ MainWalls = function(renderer,scene,microcache) {
 
   var serverWindow = new ServerRoomWindow(renderer,scene,microcache);
   serverWindow.position.x = 400;
-  serverWindow.position.z = 200;
+  serverWindow.position.z = 215;
 
   var serverRoomDoor = new Door(renderer,scene,microcache);
   serverRoomDoor.position.x = 400;
