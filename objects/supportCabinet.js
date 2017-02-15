@@ -9,7 +9,7 @@ SupportCabinet = function(renderer,scene,microcache){
 
   frontTexture.wrapS = THREE.RepeatWrapping;
   frontTexture.wrapT = THREE.RepeatWrapping;
-  frontTexture.repeat.set( 15, 1 );
+  frontTexture.repeat.set( 24, 1 );
   // For using solid colors
   //  var gateMaterial = new THREE.MeshBasicMaterial({ color: 0x8833ff });
   var cubeMaterialArray = [];
