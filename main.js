@@ -153,9 +153,15 @@ function init() {
            /*var world = new World(renderer,scene);
            scene.add(world);
            world.position.y = -130;*/
-           var isFloor = new ISFloor(renderer,scene,microcache);
+           var isFloor = new ISFloor(renderer,scene,microcache,'image/betterCheckered.png');
            scene.add(isFloor);
            isFloor.position.y = -129;
+           isFloor.position.z = -100;
+
+           var isCeiling = new ISFloor(renderer,scene,microcache,'image/ceiling.png');
+           scene.add(isCeiling);
+           isCeiling.position.y = 165;
+           isCeiling.position.z = -100;
 
            var walls = new MainWalls(renderer,scene,microcache);
            scene.add(walls);
@@ -180,6 +186,15 @@ function init() {
            qaDesk.position.z = -15;
            qaDesk.position.y = -80;
            qaDesk.rotation.y = Math.PI/2;
+
+           var blakeDesk = new BlakesNewDesk(renderer,scene,microcache);
+           scene.add(blakeDesk);
+           blakeDesk.rotation.y = -Math.PI/2;
+           blakeDesk.position.x = 720;
+           blakeDesk.position.z = -583;
+
+           var support = new SupportDesk(renderer,scene,microcache);
+           scene.add(support);
 
            var zarbeckCabinet = new FilingCabinet(renderer,scene,null,microcache);
            scene.add(zarbeckCabinet);
@@ -259,7 +274,7 @@ function init() {
   						controls.getObject().position.y = 10;
   						canJump = true;
   					}
-            console.log('x=' + controls.getObject().position.x + ' y=' + controls.getObject().position.y + ' z=' + controls.getObject().position.z);
+            //console.log('x=' + controls.getObject().position.x + ' y=' + controls.getObject().position.y + ' z=' + controls.getObject().position.z);
             if (resetPosition == true){
               controls.getObject().position.y = 10;
               controls.getObject().position.z = 0;
