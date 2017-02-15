@@ -169,7 +169,7 @@ AddMonitors = function(renderer,scene,microcache){
   vMonitor.rotation.y = Math.PI/6;
   //vMonitor.rotation.x = -Math.PI/10;
   vMonitorGroup.add(vMonitor);
-  var v2ndMonitor = new Monitor(renderer,scene,'image/scubaDubaDuba.png',45,30,microcache);
+  var v2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
   //v2ndMonitor.position.x = ;
   //v2ndMonitor.position.z = -5;
   var vKeyboard = new KeyBoard(renderer,scene);
