@@ -12,7 +12,10 @@ MainWalls = function(renderer,scene,microcache) {
   northWall.position.x = 700;
 
 
-  var otherTexture = microcache.getSet('greenWallTexture', new THREE.TextureLoader().load('image/greenTexture.png'));
+  var otherTexture = microcache.getSet('greenWallTexture', new THREE.TextureLoader().load('image/lightTanTexture.png'));
+  otherTexture.wrapS = THREE.RepeatWrapping;
+  otherTexture.wrapT = THREE.RepeatWrapping;
+  otherTexture.repeat.set(5, 5 );
   var otherMaterial = new THREE.MeshBasicMaterial({map: otherTexture});
   //TODO will need to add windows to this later.
   var southWall = new THREE.Mesh(geometrySquare, gateMaterial);
@@ -74,6 +77,10 @@ MainWalls = function(renderer,scene,microcache) {
   mwhiteboard.position.z = -747.5;
   mwhiteboard.position.y = 20;
 
+  var brandonWhiteboard = new THREE.Mesh(whiteboardGeometry, whiteBoardMaterial);
+  brandonWhiteboard.rotation.y = Math.PI/2;
+  brandonWhiteboard.position.z = -25;
+  brandonWhiteboard.position.x = 397;
 
   var isDoor = new Door(renderer,scene,microcache);
   isDoor.position.x = 700;
@@ -105,6 +112,7 @@ MainWalls = function(renderer,scene,microcache) {
   boilerRoomDoor.position.z = -113;
   boilerRoomDoor.position.x = -320;
 
+  group.add(brandonWhiteboard);
   group.add(boilerRoomDoor);
   group.add(serverRoomDoor);
   group.add(serverWindow);
