@@ -67,7 +67,7 @@ AddMonitors = function(renderer,scene,microcache){
   //jHallMonitor.rotation.y = Math.PI/4;
   jHallMonitor.rotation.x = -Math.PI/10;
   jHallMonitorGroup.add(jHallMonitor);
-  var jHall2ndMonitor = new Monitor(renderer,scene,'image/lolDefeat.png',45,30,microcache);
+  var jHall2ndMonitor = new Monitor(renderer,scene,'image/lolVictory.png',45,30,microcache);
   //jHall2ndMonitor.position.x = 18;
   //jHall2ndMonitor.position.z = -5;
   jHallMonitorGroup.add(jHall2ndMonitor)
@@ -182,6 +182,10 @@ AddMonitors = function(renderer,scene,microcache){
   vMonitorGroup.rotation.y = -Math.PI/2;
   vMonitorGroup.position.x = 87;
   vMonitorGroup.position.z = -100;
+  var vMac = new MackBookPro(renderer,scene,'image/macScreen.png',28,17,false,microcache);
+  vMac.position.y = -13;
+  vMac.position.x = 39;
+  vMonitorGroup.add(vMac);
 
 
   var michaelMonitor = new Monitor(renderer,scene,'image/geologist.png',45,30,microcache);
@@ -254,7 +258,7 @@ AddMonitors = function(renderer,scene,microcache){
   blakeMonitor.position.x = 735;
   blakeMonitor.position.z = -590;
   scene.add(blakeMonitor);
-  var blake2ndMonitor = new Monitor(renderer,scene,'image/archer.png',45,30,microcache);
+  var blake2ndMonitor = new Monitor(renderer,scene,'image/archer2.png',45,30,microcache);
   blake2ndMonitor.rotation.y = -Math.PI/4
   blake2ndMonitor.position.y = -10;
   blake2ndMonitor.position.x = 715;
@@ -359,7 +363,127 @@ AddMonitors = function(renderer,scene,microcache){
   aaronMonitorGroup.position.x = 120;
   aaronMonitorGroup.position.y = -13;
   aaronMonitorGroup.position.z = -168;
-
-
   scene.add(aaronMonitorGroup);
+
+
+  var bradMonitor = new Monitor(renderer,scene,'image/desktop.png',45,30,microcache);
+  //scene.add(anthoniesMonitor);
+  var bradMonitorGroup = new THREE.Group();
+  bradMonitor.position.x = -22.5;
+  bradMonitor.position.z = 5;
+  bradMonitor.rotation.y = Math.PI/4;
+  bradMonitorGroup.add(bradMonitor);
+  var brad2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
+  brad2ndMonitor.position.x = 18;
+  brad2ndMonitor.position.z = -5;
+  bradMonitorGroup.add(brad2ndMonitor)
+
+  var bradUpdatingMonitor = new Monitor(renderer,scene,'image/updating2.png',45,30,microcache);
+  bradUpdatingMonitor.position.x = -68;
+  bradUpdatingMonitor.position.z = 10;
+  bradUpdatingMonitor.rotation.y = Math.PI/8;
+  bradMonitorGroup.add(bradUpdatingMonitor);
+  //var bradLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
+  //bradMonitorGroup.add(bradLaptop);
+  //bradLaptop.position.x = 55;
+  //bradLaptop.position.y = -13;
+  //bradLaptop.position.z = -3;
+  var bradKeyboard = new KeyBoard(renderer,scene);
+  bradKeyboard.position.y = -23;
+  bradKeyboard.position.z = 13;
+  bradKeyboard.position.x = 8;
+  bradMonitorGroup.add(bradKeyboard);
+  bradMonitorGroup.rotation.y = -Math.PI/6;
+  bradMonitorGroup.position.x = 647;
+  bradMonitorGroup.position.z = -130;
+  bradMonitorGroup.position.y = -13;
+
+  scene.add(bradMonitorGroup);
+
+  var mariMonitor = new Monitor(renderer,scene,'image/desktop.png',45,30,microcache);
+  //scene.add(anthoniesMonitor);
+  var mariMonitorGroup = new THREE.Group();
+  mariMonitor.position.x = -22.5;
+  mariMonitor.position.z = 5;
+  mariMonitor.rotation.y = Math.PI/4;
+  mariMonitorGroup.add(mariMonitor);
+  var mari2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
+  mari2ndMonitor.position.x = 18;
+  mari2ndMonitor.position.z = -5;
+  mariMonitorGroup.add(mari2ndMonitor)
+  var mariLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
+  mariMonitorGroup.add(mariLaptop);
+  mariLaptop.position.x = 55;
+  mariLaptop.position.y = -13;
+  mariLaptop.position.z = -3;
+  var mariKeyboard = new KeyBoard(renderer,scene);
+  mariKeyboard.position.y = -23;
+  mariKeyboard.position.z = 13;
+  mariKeyboard.position.x = 8;
+  mariMonitorGroup.add(mariKeyboard);
+  mariMonitorGroup.rotation.y = -Math.PI;
+  mariMonitorGroup.position.x = 659;
+  mariMonitorGroup.position.z = 135;
+  mariMonitorGroup.position.y = -13;
+
+  scene.add(mariMonitorGroup);
+
+  var jasonMonitor = new Monitor(renderer,scene,'image/desktop.png',45,30,microcache);
+  //scene.add(anthoniesMonitor);
+  var jasonMonitorGroup = new THREE.Group();
+  jasonMonitor.position.x = -22.5;
+  jasonMonitor.position.z = 5;
+  jasonMonitor.rotation.y = Math.PI/4;
+  jasonMonitorGroup.add(jasonMonitor);
+  var jason2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
+  jason2ndMonitor.position.x = 18;
+  jason2ndMonitor.position.z = -5;
+  jasonMonitorGroup.add(jason2ndMonitor)
+  var jasonLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
+  jasonMonitorGroup.add(jasonLaptop);
+  jasonLaptop.rotation.y = Math.PI/6;
+  jasonLaptop.position.x = -65;
+  jasonLaptop.position.y = -13;
+  jasonLaptop.position.z = 30;
+  var jasonKeyboard = new KeyBoard(renderer,scene);
+  jasonKeyboard.position.y = -23;
+  jasonKeyboard.position.z = 13;
+  jasonKeyboard.position.x = 8;
+  jasonMonitorGroup.add(jasonKeyboard);
+  jasonMonitorGroup.rotation.y = -Math.PI/6;
+  jasonMonitorGroup.position.x = 659;
+  jasonMonitorGroup.position.z = 180;
+  jasonMonitorGroup.position.y = -13;
+  scene.add(jasonMonitorGroup);
+
+  var delMonitor = new Monitor(renderer,scene,'image/desktop.png',45,30,microcache);
+  //scene.add(anthoniesMonitor);
+  var delMonitorGroup = new THREE.Group();
+  delMonitor.position.x = -22.5;
+  delMonitor.position.z = 5;
+  delMonitor.rotation.y = Math.PI/4;
+  delMonitorGroup.add(delMonitor);
+  var del2ndMonitor = new Monitor(renderer,scene,'image/boringVS.png',45,30,microcache);
+  del2ndMonitor.position.x = 18;
+  del2ndMonitor.position.z = -5;
+  delMonitorGroup.add(del2ndMonitor)
+  var delLaptop = new DellLapTop(renderer,scene,'image/lapTopScreen.png',28,17,false,microcache);
+  delMonitorGroup.add(delLaptop);
+  delLaptop.position.x = 55;
+  delLaptop.position.y = -13;
+  delLaptop.position.z = -3;
+  var delKeyboard = new KeyBoard(renderer,scene);
+  delKeyboard.position.y = -23;
+  delKeyboard.position.z = 13;
+  delKeyboard.position.x = 8;
+  delMonitorGroup.add(delKeyboard);
+  delMonitorGroup.rotation.y = 7*Math.PI/6;
+  delMonitorGroup.position.x = 680;
+  delMonitorGroup.position.z = 435;
+  delMonitorGroup.position.y = -13;
+
+  scene.add(delMonitorGroup);
+
+
+
 }

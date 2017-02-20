@@ -256,7 +256,7 @@ function init() {
               return "D\'lisa says: Please update your branch with QA.";
             }
             if (isInBubble(myPositionX,myPositionZ,134,78)){
-              return "Mike says: .";
+              return "Mike says: We're rolling out tonight.";
             }
             if (isInBubble(myPositionX,myPositionZ,101,-190)){
               return "Aaron says: I have another density issue.";
@@ -265,7 +265,7 @@ function init() {
               return "Del says: DBs are up to date.";
             }
             if (isInBubble(myPositionX,myPositionZ,647,210)){
-              return "Jason says: .";
+              return "Jason says: There are donuts.";
             }
             if (isInBubble(myPositionX,myPositionZ,647,89)){
               return "Mari says: There\'s another issue in the queue.";
@@ -274,7 +274,7 @@ function init() {
               return "Brad says: Ill fix that for you.";
             }
             if (isInBubble(myPositionX,myPositionZ,689,-598)){
-              return "Blake says: You can all leave early for the day.";
+              return "Blake says: We're getting pizza!";
             }
             return "";
         }
