@@ -1,5 +1,5 @@
 if ( ! Detector.webgl ) {
-
+    //hand made hero
     Detector.addGetWebGLMessage();
     document.getElementById( 'container' ).innerHTML = "";
 
@@ -65,7 +65,8 @@ function init() {
   			var prevTime = performance.now();
   			var velocity = new THREE.Vector3();
   			function init() {
-          $("#messageBox").hide();
+          //Not working because I don't currently have internet
+          //$("#messageBox").hide();
   				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 20000 );
 
 
@@ -203,6 +204,11 @@ function init() {
 
           var monitors = new AddMonitors(renderer, scene,microcache);
 
+          //var newDesks = new NewIsDesk(renderer, scene,microcache);
+          //
+
+          var messyPapers = new Messy(renderer, scene,microcache);
+          scene.add(messyPapers);
   				renderer = new THREE.WebGLRenderer();
   				renderer.setClearColor( 0xffffff );
   				renderer.setPixelRatio( window.devicePixelRatio );
@@ -250,7 +256,7 @@ function init() {
               return "Anthony says: Not another P44 issue.";
             }
             if (isInBubble(myPositionX,myPositionZ,55,-105)){
-              return "V says: ";
+              return "V says: Error Writing To UTSAudit Database";
             }
             if (isInBubble(myPositionX,myPositionZ,143,-110)){
               return "D\'lisa says: Please update your branch with QA.";
